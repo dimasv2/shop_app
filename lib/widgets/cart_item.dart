@@ -41,25 +41,25 @@ class CartItem extends StatelessWidget {
         return showDialog(
           context: context,
           builder: (ctx) => AlertDialog(
-                title: Text('Are you sure?'),
-                content: Text(
-                  'Do you want to remove the item from the cart?',
-                ),
-                actions: <Widget>[
-                  FlatButton(
-                    child: Text('No'),
-                    onPressed: () {
-                      Navigator.of(ctx).pop(false);
-                    },
-                  ),
-                  FlatButton(
-                    child: Text('Yes'),
-                    onPressed: () {
-                      Navigator.of(ctx).pop(true);
-                    },
-                  ),
-                ],
+            title: Text('Apakah Kamu Yakin?'),
+            content: Text(
+              'Apakah kamu yakin ingin menghapus produk ini dari keranjangmu?',
+            ),
+            actions: <Widget>[
+              FlatButton(
+                child: Text('Tidak'),
+                onPressed: () {
+                  Navigator.of(ctx).pop(false);
+                },
               ),
+              FlatButton(
+                child: Text('Iya'),
+                onPressed: () {
+                  Navigator.of(ctx).pop(true);
+                },
+              ),
+            ],
+          ),
         );
       },
       onDismissed: (direction) {
@@ -77,12 +77,12 @@ class CartItem extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.all(5),
                 child: FittedBox(
-                  child: Text('\$$price'),
+                  child: Text('\Rp $price'),
                 ),
               ),
             ),
             title: Text(title),
-            subtitle: Text('Total: \$${(price * quantity)}'),
+            subtitle: Text('Total: \Rp ${(price * quantity)}'),
             trailing: Text('$quantity x'),
           ),
         ),
